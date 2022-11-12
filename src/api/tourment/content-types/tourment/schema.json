@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tourments",
+  "info": {
+    "singularName": "tourment",
+    "pluralName": "tourments",
+    "displayName": "tourment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tourments_ad": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tourments-ad.tourments-ad"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team.team",
+      "mappedBy": "tourments"
+    },
+    "stages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stage.stage",
+      "mappedBy": "tourment"
+    }
+  }
+}
